@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 const AboutMe: React.FC = () => (
   <section className="w-full max-w-3xl mx-auto mb-10 py-8 px-4 sm:py-12 sm:px-8 text-center bg-gray-950 rounded-2xl shadow-xl">
     <img
-      src="../src/assets/foto-project.jpg"
+      src="../assets/foto-project.jpg"
       alt="Foto de Miguel"
       className="mx-auto mb-6 rounded-full w-40 h-40 sm:w-56 sm:h-56 object-cover shadow-lg border-4 border-blue-200 dark:border-blue-700"
     />

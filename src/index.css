@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
-/* Utilitário para garantir imagens responsivas */
 img,
 video {
   max-width: 100%;
   height: auto;
 }
 
-/* Evita overflow horizontal */
 body,
 html,
 #root {
@@ -15,7 +13,6 @@ html,
   overflow-x: hidden;
 }
 
-/* Ajuste para textos longos em telas pequenas */
 .break-words {
   word-break: break-word;
 }
