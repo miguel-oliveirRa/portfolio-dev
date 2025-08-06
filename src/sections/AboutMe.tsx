@@ -1,5 +1,6 @@
 import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const AboutMe: React.FC = () => (
   <section className="w-full max-w-3xl mx-auto mb-10 py-8 px-4 sm:py-12 sm:px-8 text-center bg-gray-950 rounded-2xl shadow-xl">
@@ -14,7 +15,7 @@ const AboutMe: React.FC = () => (
     <p className="text-base sm:text-lg text-gray-200">
       Olá! Meu nome é Miguel. Sou desenvolvedor apaixonado por tecnologia,
       especializado em criar soluções modernas e eficientes. Aqui você encontra
-      meus principais projetos
+      meus principais projetos, e meus contatos.
     </p>
     <div className="mt-8 flex justify-center gap-4 sm:gap-6">
       <a
@@ -25,6 +26,15 @@ const AboutMe: React.FC = () => (
         className="text-sky-600 hover:text-sky-400 transition-colors"
       >
         <FaLinkedin size={32} />
+      </a>
+      <a
+        href="mailto:mo736356@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Email"
+        className="text-gray-200 hover:text-purple-500 transition-colors"
+      >
+        <MdEmail size={32} />
       </a>
       <a
         href="https://github.com/miguel-oliveirRa"
