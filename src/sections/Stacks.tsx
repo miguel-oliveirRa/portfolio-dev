@@ -37,7 +37,7 @@ const Stacks: React.FC = () => (
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.1 }}
-    transition={{ duration: 0.7, ease: "easeInOut" }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
     className="w-full max-w-2xl xl:max-w-3xl mx-auto mt-8 mb-8 py-6 px-2 sm:py-10 sm:px-4 text-center bg-gray-950 rounded-2xl shadow-xl"
     aria-labelledby="stacks-title"
   >
