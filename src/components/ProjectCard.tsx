@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 type Props = {
   id: number;
   name: string;
@@ -8,7 +10,13 @@ type Props = {
 
 const ProjectCard: React.FC<Props> = ({ name, url, extra, challenge }) => {
   return (
-    <div className="border rounded-xl p-4 shadow bg-gray-900 flex flex-col justify-between min-h-[180px] sm:min-h-[220px] transition-all duration-300">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="border rounded-xl p-4 shadow bg-gray-900 flex flex-col justify-between min-h-[180px] sm:min-h-[220px] transition-all duration-300"
+    >
       <h3 className="text-lg sm:text-xl font-semibold mb-2 text-indigo-500">
         {name}
       </h3>
@@ -46,7 +54,7 @@ const ProjectCard: React.FC<Props> = ({ name, url, extra, challenge }) => {
           </span>
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

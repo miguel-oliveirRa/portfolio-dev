@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
 import { getPortfolioRepos } from "../service/api/github";
 import extraDescriptions from "../data/extraDescriptions";
@@ -27,8 +28,18 @@ const Projects: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full max-w-5xl mx-auto mt-8 py-8 px-4 sm:py-12 sm:px-8 text-center bg-gray-950 rounded-2xl shadow-xl">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-indigo-500">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
+      className="w-full max-w-4xl xl:max-w-5xl mx-auto mt-8 py-6 px-2 sm:py-10 sm:px-4 text-center bg-gray-950 rounded-2xl shadow-xl"
+      aria-labelledby="projetos-title"
+    >
+      <h2
+        id="projetos-title"
+        className="text-2xl sm:text-3xl font-bold mb-4 text-indigo-500"
+      >
         Meus Projetos
       </h2>
 
@@ -39,7 +50,7 @@ const Projects: React.FC = () => {
       </p>
 
       {/* 🔵 Container com fundo para os cards */}
-      <div className="bg-gray-900 p-4 sm:p-6 rounded-xl shadow-inner">
+      <div className="bg-gray-900 p-2 sm:p-4 rounded-xl shadow-inner">
         {agroStock && (
           <div className="mb-8">
             <ProjectCard
@@ -81,7 +92,7 @@ const Projects: React.FC = () => {
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

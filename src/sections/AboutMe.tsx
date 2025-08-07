@@ -1,15 +1,26 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const AboutMe: React.FC = () => (
-  <section className="w-full max-w-3xl mx-auto mb-10 py-8 px-4 sm:py-12 sm:px-8 text-center bg-gray-950 rounded-2xl shadow-xl">
+  <motion.section
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.5 }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
+    className="w-full max-w-2xl xl:max-w-3xl mx-auto mb-8 py-6 px-2 sm:py-10 sm:px-4 text-center bg-gray-950 rounded-2xl shadow-xl"
+    aria-labelledby="aboutme-title"
+  >
     <img
       src="/assets/foto-project.jpg"
-      alt="Foto de Miguel"
-      className="mx-auto mb-6 rounded-full w-40 h-40 sm:w-56 sm:h-56 object-cover shadow-lg border-4 border-blue-200 dark:border-blue-700"
+      alt="Foto de Miguel Oliveira sorrindo, usando camiseta escura, fundo claro."
+      className="mx-auto mb-6 rounded-full w-32 h-32 sm:w-44 sm:h-44 object-cover shadow-lg border-4 border-blue-200"
     />
-    <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-indigo-500">
+    <h2
+      id="aboutme-title"
+      className="text-2xl sm:text-3xl font-bold mb-4 text-indigo-500"
+    >
       Sobre Mim
     </h2>
     <p className="text-base sm:text-lg text-gray-200">
@@ -23,7 +34,9 @@ const AboutMe: React.FC = () => (
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
-        className="text-sky-600 hover:text-sky-400 transition-colors"
+        className="text-sky-600 hover:text-sky-400 focus-visible:ring-2 focus-visible:ring-sky-400 focus:outline-none transition-all duration-300 rounded-full"
+        tabIndex={0}
+        title="LinkedIn de Miguel Oliveira"
       >
         <FaLinkedin size={32} />
       </a>
@@ -32,7 +45,9 @@ const AboutMe: React.FC = () => (
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Email"
-        className="text-gray-200 hover:text-purple-500 transition-colors"
+        className="text-gray-200 hover:text-purple-400 focus-visible:ring-2 focus-visible:ring-purple-400 focus:outline-none transition-all duration-300 rounded-full"
+        tabIndex={0}
+        title="Enviar email para Miguel Oliveira"
       >
         <MdEmail size={32} />
       </a>
@@ -41,12 +56,14 @@ const AboutMe: React.FC = () => (
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
-        className="text-gray-200 hover:text-purple-500 transition-colors"
+        className="text-gray-200 hover:text-indigo-400 focus-visible:ring-2 focus-visible:ring-indigo-400 focus:outline-none transition-all duration-300 rounded-full"
+        tabIndex={0}
+        title="GitHub de Miguel Oliveira"
       >
         <FaGithub size={32} />
       </a>
     </div>
-  </section>
+  </motion.section>
 );
 
 export default AboutMe;

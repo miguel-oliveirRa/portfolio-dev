@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaReact,
   FaGithub,
@@ -32,8 +33,18 @@ const stacks = [
 ];
 
 const Stacks: React.FC = () => (
-  <section className="w-full max-w-3xl mx-auto mt-8 mb-8 py-8 px-4 sm:py-12 sm:px-8 text-center bg-gray-950 rounded-2xl shadow-xl">
-    <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-indigo-500">
+  <motion.section
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.5 }}
+    transition={{ duration: 0.7, ease: "easeOut" }}
+    className="w-full max-w-2xl xl:max-w-3xl mx-auto mt-8 mb-8 py-6 px-2 sm:py-10 sm:px-4 text-center bg-gray-950 rounded-2xl shadow-xl"
+    aria-labelledby="stacks-title"
+  >
+    <h2
+      id="stacks-title"
+      className="text-2xl sm:text-3xl font-bold mb-4 text-indigo-500"
+    >
       Minhas Stacks
     </h2>
     <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
@@ -51,7 +62,7 @@ const Stacks: React.FC = () => (
         </div>
       ))}
     </div>
-  </section>
+  </motion.section>
 );
 
 export default Stacks;
