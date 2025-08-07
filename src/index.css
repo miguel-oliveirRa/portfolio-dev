@@ -6,16 +6,6 @@ video {
   height: auto;
 }
 
-body,
-html {
-  width: 100vw;
-  overflow-x: hidden;
-}
-
-#root {
-  width: 100vw;
-}
-
 .break-words {
   word-break: break-word;
 }
