@@ -13,8 +13,8 @@ const ProjectCard: React.FC<Props> = ({ name, url, extra, challenge }) => {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
       className="border rounded-xl p-4 shadow bg-gray-900 flex flex-col justify-between min-h-[180px] sm:min-h-[220px] transition-all duration-300"
     >
       <h3 className="text-lg sm:text-xl font-semibold mb-2 text-indigo-500">

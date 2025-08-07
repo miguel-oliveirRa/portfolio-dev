@@ -7,10 +7,13 @@ video {
 }
 
 body,
-html,
-#root {
+html {
   width: 100vw;
   overflow-x: hidden;
+}
+
+#root {
+  width: 100vw;
 }
 
 .break-words {
